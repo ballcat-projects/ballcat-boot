@@ -1,0 +1,85 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: @artifactId@
+  profiles:
+    active: @profiles.active@  # 当前激活配置，默认dev
+
+# 图形验证码
+aj:
+  captcha:
+    waterMark: 'BallCat'
+    cacheType: redis
+
+# mybatis-plus相关配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*Mapper.xml
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+      insert-strategy: not_empty
+      update-strategy: not_empty
+      logic-delete-value: "NOW()" # 逻辑已删除值(使用当前时间标识)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+
+# BallCat 相关配置
+ballcat:
+  security:
+    # 前端传输密码的 AES 加密密钥
+    password-secret-key: '==BallCat-Auth=='
+    oauth2:
+      authorizationserver:
+        # 登陆验证码是否开启
+        login-captcha-enabled: true
+      resourceserver:
+        ## 忽略鉴权的 url 列表
+        ignore-urls:
+          - /public/**
+          - /actuator/**
+          - /doc.html
+          - /v2/api-docs/**
+          - /v3/api-docs/**
+          - /swagger-resources/**
+          - /swagger-ui/**
+          - /webjars/**
+          - /bycdao-ui/**
+          - /favicon.ico
+          - /captcha/**
+  # 项目 redis 缓存的 key 前缀
+  redis:
+    key-prefix: 'ballcat:'
+  # actuator 加解密密钥
+  actuator:
+    auth: true
+    secret-id: 'ballcat-monitor'
+    secret-key: '=BallCat-Monitor'
+  swagger:
+    title: BallCat-Admin Docs
+    group-name: ballcat-admin
+    documentation-type: swagger_2
+    description: BallCat 后台管理服务Api文档
+    version: 0.0.1
+    license: Powered By BallCat
+    licenseUrl: http://www.ballcat.cn/
+    terms-of-service-url: http://www.ballcat.cn/
+    contact:
+      name: Hccake
+      email: chengbohua@foxmail.com
+      url: https://github.com/Hccake
+    authorization:
+      name: oauth2   #由于Knife4j是根据名称进行判断的，所以必须叫oauth2
+      authorization-scope-list:
+        - scope: server
+          description: server all
+      token-url: http://ballcat-admin:8080/oauth/token
+
+
+
+
+
+
+

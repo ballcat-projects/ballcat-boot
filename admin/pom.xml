@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>ballcat-boot</artifactId>
+		<groupId>com.your.packages</groupId>
+		<version>${revision}</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>admin</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.hccake</groupId>
+			<artifactId>ballcat-admin-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.hccake</groupId>
+			<artifactId>ballcat-admin-websocket</artifactId>
+		</dependency>
+
+		<!--mysql驱动-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- swagger 文档聚合 -->
+		<dependency>
+			<groupId>com.hccake</groupId>
+			<artifactId>ballcat-spring-boot-starter-swagger</artifactId>
+		</dependency>
+		<!-- swagger springfox ui -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+		</dependency>
+		<!-- swagger 增强版 ui -->
+		<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>knife4j-spring-ui</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

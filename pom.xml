@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<modules>
+		<module>admin</module>
+	</modules>
+	<parent>
+		<artifactId>ballcat</artifactId>
+		<groupId>com.hccake</groupId>
+		<version>0.3.0-SNAPSHOT</version>
+		<relativePath/>
+	</parent>
+
+    <groupId>com.your.packages</groupId>
+    <artifactId>ballcat-boot</artifactId>
+    <version>${revision}</version>
+	<packaging>pom</packaging>
+
+    <properties>
+		<revision>0.3.0-SNAPSHOT</revision>
+		<java.version>1.8</java.version>
+    </properties>
+
+	<!-- oss 快照私服 -->
+	<repositories>
+		<repository>
+			<id>oss-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+</project>

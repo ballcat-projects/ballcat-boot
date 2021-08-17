@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://ballcat-mysql:3306/ballcat?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: '123456'
+  redis:
+    host: ballcat-redis
+    password: ''
+    port: 6379
+
+# 日志文件地址，配置此属性以便 SBA 在线查看日志
+logging:
+  file:
+    path: logs/@artifactId@
+    name: ${logging.file.path}/output.log
+
+ballcat:
+  oss:
+    bucket: your-bucket-here
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    access-key: your key here
+    access-secret: your secret here
