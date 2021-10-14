@@ -2,13 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-	<modules>
-		<module>admin</module>
-	</modules>
 	<parent>
 		<artifactId>ballcat</artifactId>
 		<groupId>com.hccake</groupId>
-		<version>0.3.0</version>
+		<version>0.4.0</version>
 		<relativePath/>
 	</parent>
 
@@ -17,8 +14,12 @@
     <version>${revision}</version>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>admin</module>
+	</modules>
+
     <properties>
-		<revision>0.3.0</revision>
+		<revision>0.4.0</revision>
 		<java.version>1.8</java.version>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
