@@ -14,3 +14,9 @@ ballcat:
     access-key: your key here
     access-secret: your secret here
     bucket: your-bucket-here
+
+springdoc:
+  swagger-ui:
+    urls:
+      - { name: 'admin', url: '/v3/api-docs' }
+      - { name: 'api', url: 'http://ballcat-api/v3/api-docs' }

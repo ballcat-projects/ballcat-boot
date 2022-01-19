@@ -27,20 +27,21 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 
-		<!-- swagger 文档聚合 -->
+		<!-- openapi 扩展处理 -->
 		<dependency>
 			<groupId>com.hccake</groupId>
-			<artifactId>ballcat-spring-boot-starter-swagger</artifactId>
+			<artifactId>ballcat-extend-openapi</artifactId>
 		</dependency>
-		<!-- swagger springfox ui -->
+		<!-- springdoc swagger-ui -->
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
 		</dependency>
 		<!-- swagger 增强版 ui -->
 		<dependency>
 			<groupId>com.github.xiaoymin</groupId>
-			<artifactId>knife4j-spring-ui</artifactId>
+			<artifactId>knife4j-springdoc-ui</artifactId>
+			<version>3.0.3</version>
 		</dependency>
 	</dependencies>
 

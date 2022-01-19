@@ -16,7 +16,7 @@ logging:
 
 # 生产环境关闭文档
 ballcat:
-  swagger:
+  openapi:
     enabled: false
   oss:
     bucket: your-bucket-here
