@@ -62,30 +62,32 @@ ballcat:
     secret-id: 'ballcat-monitor'
     secret-key: '=BallCat-Monitor'
   openapi:
-    title: BallCat-Admin Docs
-    description: BallCat 后台管理服务Api文档
-    version: ${project.version}
-    terms-of-service: http://www.ballcat.cn/
-    license:
-      name: Powered By BallCat
-      url: http://www.ballcat.cn/
-    contact:
-      name: Hccake
-      email: chengbohua@foxmail.com
-      url: https://github.com/Hccake
-    security-schemes:
-      apiKey:
-        type: APIKEY
-        in: HEADER
-        name: 'api-key'
-      oauth2:
-        type: OAUTH2
-        flows:
-          password:
-            token-url: http://ballcat-admin:8080/oauth/token
-    global-security-requirements:
-      oauth2: []
-      apiKey: []
+    info:
+      title: BallCat-Admin Docs
+      description: BallCat 后台管理服务Api文档
+      version: ${project.version}
+      terms-of-service: http://www.ballcat.cn/
+      license:
+        name: Powered By BallCat
+        url: http://www.ballcat.cn/
+      contact:
+        name: Hccake
+        email: chengbohua@foxmail.com
+        url: https://github.com/Hccake
+    components:
+      security-schemes:
+        apiKey:
+          type: APIKEY
+          in: HEADER
+          name: 'api-key'
+        oauth2:
+          type: OAUTH2
+          flows:
+            password:
+              token-url: http://ballcat-admin:8080/oauth/token
+    security:
+      - oauth2: []
+      - apiKey: []
 
 springdoc:
   swagger-ui:
