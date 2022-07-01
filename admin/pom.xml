@@ -11,6 +11,11 @@
 
 	<artifactId>admin</artifactId>
 
+	<properties>
+		<knife4j.version>3.0.3</knife4j.version>
+		<anji.captcha.version>1.3.0</anji.captcha.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.hccake</groupId>
@@ -41,7 +46,14 @@
 		<dependency>
 			<groupId>com.github.xiaoymin</groupId>
 			<artifactId>knife4j-springdoc-ui</artifactId>
-			<version>3.0.3</version>
+			<version>${knife4j.version}</version>
+		</dependency>
+
+		<!-- anji 图形验证码 -->
+		<dependency>
+			<groupId>com.anji-plus</groupId>
+			<artifactId>spring-boot-starter-captcha</artifactId>
+			<version>${anji.captcha.version}</version>
 		</dependency>
 	</dependencies>
 

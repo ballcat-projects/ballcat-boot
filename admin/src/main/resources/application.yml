@@ -14,8 +14,8 @@ spring:
 # 图形验证码
 aj:
   captcha:
-    waterMark: 'BallCat'
-    cacheType: redis
+    water-mark: 'BallCat'
+    cache-type: redis
 
 # mybatis-plus相关配置
 mybatis-plus:
