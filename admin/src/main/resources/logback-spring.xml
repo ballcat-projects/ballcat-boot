@@ -40,7 +40,7 @@
 		<!-- 日志记录器的滚动策略，按日期，按大小记录 -->
 		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 			<!-- 日志归档 -->
-			<fileNamePattern>${log.path}/%d{yyyy-MM, aux}/debug.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+			<fileNamePattern>${log.path}/%d{yyyy-MM, aux}/output.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
 			<!--日志文档最大大小-->
 			<maxFileSize>${max.file.size}</maxFileSize>
 			<!--日志文档保留天数-->
