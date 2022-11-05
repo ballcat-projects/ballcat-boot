@@ -11,11 +11,10 @@ spring:
     # 必须注册此 basename, 否则 security 错误信息将一直都是英文
     basename: 'org.springframework.security.messages'
 
-# 图形验证码
-aj:
-  captcha:
-    water-mark: 'BallCat'
-    cache-type: redis
+# 天爱图形验证码
+captcha:
+  secondary:
+    enabled: true
 
 # mybatis-plus相关配置
 mybatis-plus:
