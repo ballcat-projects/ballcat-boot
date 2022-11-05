@@ -10,7 +10,7 @@ spring:
 
 ballcat:
   oss:
-    endpoint: oss-cn-shanghai.aliyuncs.com
+    endpoint: http://oss-cn-shanghai.aliyuncs.com
     access-key: your key here
     access-secret: your secret here
     bucket: your-bucket-here

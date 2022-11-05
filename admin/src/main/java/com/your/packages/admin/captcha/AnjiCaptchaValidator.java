@@ -3,9 +3,9 @@ package com.your.packages.admin.captcha;
 import com.anji.captcha.model.common.ResponseModel;
 import com.anji.captcha.model.vo.CaptchaVO;
 import com.anji.captcha.service.CaptchaService;
-import com.hccake.ballcat.auth.filter.captcha.CaptchaValidator;
-import com.hccake.ballcat.auth.filter.captcha.domain.CaptchaResponse;
 import lombok.RequiredArgsConstructor;
+import org.ballcat.security.captcha.CaptchaValidateResult;
+import org.ballcat.security.captcha.CaptchaValidator;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +24,7 @@ public class AnjiCaptchaValidator implements CaptchaValidator {
 	private final CaptchaService captchaService;
 
 	@Override
-	public CaptchaResponse validate(HttpServletRequest request) {
+	public CaptchaValidateResult validate(HttpServletRequest request) {
 		// 获取验证码参数
 		String captchaVerification = request.getParameter(CAPTCHA_VERIFICATION_PARAM);
 
@@ -34,11 +34,7 @@ public class AnjiCaptchaValidator implements CaptchaValidator {
 		ResponseModel responseModel = captchaService.verification(captchaVO);
 
 		// 组装校验结果
-		CaptchaResponse captchaResponse = new CaptchaResponse();
-		captchaResponse.setSuccess(responseModel.isSuccess());
-		captchaResponse.setErrMsg(responseModel.getRepMsg());
-
-		return captchaResponse;
+		return new CaptchaValidateResult(responseModel.isSuccess(), responseModel.getRepMsg());
 	}
 
 }
