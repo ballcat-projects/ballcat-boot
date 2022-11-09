@@ -9,7 +9,7 @@ spring:
   messages:
     # basename 中的 . 和 / 都可以用来表示文件层级，默认的 basename 是 messages
     # 必须注册此 basename, 否则 security 错误信息将一直都是英文
-    basename: 'org.springframework.security.messages'
+    basename: 'ballcat-*, org.springframework.security.messages'
 
 # 天爱图形验证码
 captcha:
