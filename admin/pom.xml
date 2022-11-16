@@ -55,6 +55,17 @@
 			<artifactId>tianai-captcha-springboot-starter</artifactId>
 			<version>${tianai-captcha.version}</version>
 		</dependency>
+
+		<!-- API, java.xml.bind module -->
+		<!-- add it when jdk11 -->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
