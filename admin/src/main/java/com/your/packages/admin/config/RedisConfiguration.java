@@ -36,4 +36,5 @@ public class RedisConfiguration {
 		template.setKeySerializer(new PrefixJdkRedisSerializer(redisPrefixConverter));
 		return template;
 	}
+
 }
