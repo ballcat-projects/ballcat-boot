@@ -98,4 +98,7 @@
 			<appender-ref ref="ERROR_FILE"/>
 		</root>
 	</springProfile>
+
+	<logger name="org.apache.http.impl.conn" level="INFO" />
+	<logger name="com.zaxxer.hikari.pool" level="INFO" />
 </configuration>

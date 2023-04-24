@@ -38,6 +38,8 @@ ballcat:
       authorizationserver:
         # 登陆验证码是否开启
         login-captcha-enabled: true
+        # 内嵌的表单登陆页是否开启
+        login-page-enabled: false
       resourceserver:
         ## 忽略鉴权的 url 列表
         ignore-urls:
@@ -85,10 +87,12 @@ ballcat:
             password:
               token-url: /oauth/token
     security:
-      - oauth2: []
-      - apiKey: []
+      - oauth2: [ ]
+      - apiKey: [ ]
 
 springdoc:
+  # 开启 oauth2 端点显示
+  show-oauth2-endpoints: true
   swagger-ui:
     oauth:
       client-id: test
