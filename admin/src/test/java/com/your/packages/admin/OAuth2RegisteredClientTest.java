@@ -1,7 +1,7 @@
 package com.your.packages.admin;
 
 import org.ballcat.springsecurity.oauth2.server.authorization.autoconfigure.OAuth2AuthorizationServerAutoConfiguration;
-import org.ballcat.springsecurity.oauth2.server.resource.ResourceServerAutoConfiguration;
+import org.ballcat.springsecurity.oauth2.server.resource.OAuth2ResourceServerAutoConfiguration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ import java.util.UUID;
  * @author hccake
  */
 @JdbcTest(excludeAutoConfiguration = { OAuth2AuthorizationServerAutoConfiguration.class,
-		ResourceServerAutoConfiguration.class })
+		OAuth2ResourceServerAutoConfiguration.class })
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class OAuth2RegisteredClientTest {
 
