@@ -44,28 +44,22 @@
 		<!--重要 如果不设置resource 会导致application.yaml中的@@找不到pom文件中的配置-->
 		<resources>
 			<resource>
-				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
-				<excludes>
-					<exclude>static/report/**</exclude>
-					<exclude>**/*.woff</exclude>
-					<exclude>**/*.woff2</exclude>
-					<exclude>**/*.ttf</exclude>
-					<exclude>**/*.ico</exclude>
-					<exclude>**/chromedriver*</exclude>
-				</excludes>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.yml</include>
+					<include>**/*.yaml</include>
+					<include>logback-spring.xml</include>
+				</includes>
 			</resource>
 			<resource>
-				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
-				<includes>
-					<include>static/report/**</include>
-					<include>**/*.woff</include>
-					<include>**/*.woff2</include>
-					<include>**/*.ttf</include>
-					<include>**/*.ico</include>
-					<include>**/chromedriver*</include>
-				</includes>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**/*.yml</exclude>
+					<exclude>**/*.yaml</exclude>
+					<exclude>logback-spring.xml</exclude>
+				</excludes>
 			</resource>
 		</resources>
 	</build>
