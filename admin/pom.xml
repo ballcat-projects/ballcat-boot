@@ -13,7 +13,7 @@
 
 	<properties>
 		<knife4j.version>3.0.3</knife4j.version>
-		<tianai-captcha.version>1.3.3</tianai-captcha.version>
+		<tianai-captcha.version>1.4.1</tianai-captcha.version>
 	</properties>
 
 	<dependencies>
