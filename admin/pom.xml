@@ -17,18 +17,24 @@
 	</properties>
 
 	<dependencies>
-		<!-- 基于 spring authorization server 的授权服务器 -->
 		<dependency>
-			<groupId>com.hccake</groupId>
-			<artifactId>ballcat-spring-security-oauth2-authorization-server</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.hccake</groupId>
+			<groupId>org.ballcat.business</groupId>
 			<artifactId>ballcat-admin-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.hccake</groupId>
+			<groupId>org.ballcat.business</groupId>
 			<artifactId>ballcat-admin-websocket</artifactId>
+		</dependency>
+
+		<!-- 基于 spring authorization server 的 OAuth2 授权服务器 -->
+		<dependency>
+			<groupId>org.ballcat</groupId>
+			<artifactId>ballcat-spring-security-oauth2-authorization-server</artifactId>
+		</dependency>
+		<!-- 基于 spring security 的 OAuth2 资源服务器 -->
+		<dependency>
+			<groupId>org.ballcat</groupId>
+			<artifactId>ballcat-spring-security-oauth2-resource-server</artifactId>
 		</dependency>
 
 		<!--mysql驱动-->
@@ -39,8 +45,8 @@
 
 		<!-- openapi 扩展处理 -->
 		<dependency>
-			<groupId>com.hccake</groupId>
-			<artifactId>ballcat-extend-openapi</artifactId>
+			<groupId>org.ballcat</groupId>
+			<artifactId>ballcat-spring-boot-starter-openapi</artifactId>
 		</dependency>
 		<!-- springdoc swagger-ui -->
 		<dependency>
@@ -75,6 +81,7 @@
 			<groupId>org.glassfish.jaxb</groupId>
 			<artifactId>jaxb-runtime</artifactId>
 		</dependency>
+
 	</dependencies>
 
 	<build>

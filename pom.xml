@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>ballcat</artifactId>
-		<groupId>com.hccake</groupId>
-		<version>1.4.0</version>
+		<groupId>org.ballcat</groupId>
+		<version>2.0.0-SNAPSHOT</version>
 		<relativePath/>
 	</parent>
 
@@ -19,11 +19,23 @@
 	</modules>
 
     <properties>
-		<revision>1.4.0</revision>
+		<revision>2.0.0</revision>
 		<java.version>1.8</java.version>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.ballcat.business</groupId>
+				<artifactId>ballcat-business-bom</artifactId>
+				<version>2.0.0-SNAPSHOT</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<!-- oss 快照私服 -->
 	<repositories>
@@ -62,6 +74,42 @@
 				</excludes>
 			</resource>
 		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${mapstruct.version}</version>
+						</path>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>${lombok.version}</version>
+						</path>
+						<!-- additional annotation processor required as of Lombok 1.18.16 -->
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok-mapstruct-binding</artifactId>
+							<version>${lombok-mapstruct-binding.version}</version>
+						</path>
+						<!-- spring-boot 配置处理 -->
+						<path>
+							<groupId>org.springframework.boot</groupId>
+							<artifactId>spring-boot-configuration-processor</artifactId>
+							<version>${spring-boot.version}</version>
+						</path>
+					</annotationProcessorPaths>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 
 </project>
