@@ -31,6 +31,22 @@ mybatis-plus:
 
 # BallCat 相关配置
 ballcat:
+  web:
+    accesslog:
+      enabled: true
+      settings:
+        # 注意，这里规则取命中的第一个，所以 /** 要放在最后一个
+        - url-pattern: /swagger-ui/**
+          ignore: true
+        - url-pattern: /webjars/**
+          ignore: true
+        - url-pattern: /favicon.ico
+          ignore: true
+        - url-pattern: /**
+          include-query-string: true
+          include-request-body: true
+          include-response-body: true
+      max-body-length: 2048
   security:
     # 前端传输密码的 AES 加密密钥
     password-secret-key: '==BallCat-Auth=='
