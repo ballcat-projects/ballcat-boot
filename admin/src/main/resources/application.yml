@@ -50,26 +50,24 @@ ballcat:
   security:
     # 前端传输密码的 AES 加密密钥
     password-secret-key: '==BallCat-Auth=='
-    oauth2:
-      authorizationserver:
-        # 登陆验证码是否开启
-        login-captcha-enabled: true
-        # 内嵌的表单登陆页是否开启
-        login-page-enabled: false
-      resourceserver:
-        ## 忽略鉴权的 url 列表
-        ignore-urls:
-          - /public/**
-          - /actuator/**
-          - /doc.html
-          - /v2/api-docs/**
-          - /v3/api-docs/**
-          - /swagger-resources/**
-          - /swagger-ui/**
-          - /webjars/**
-          - /bycdao-ui/**
-          - /favicon.ico
-          - /captcha/**
+  springsecurity:
+    form-login:
+      enabled: true
+      separated: true
+      login-captcha: true
+    ## 忽略鉴权的 url 列表
+    ignore-urls:
+      - /public/**
+      - /actuator/**
+      - /doc.html
+      - /v2/api-docs/**
+      - /v3/api-docs/**
+      - /swagger-resources/**
+      - /swagger-ui/**
+      - /webjars/**
+      - /bycdao-ui/**
+      - /favicon.ico
+      - /captcha/**
   # 项目 redis 缓存的 key 前缀
   redis:
     key-prefix: 'ballcat:'

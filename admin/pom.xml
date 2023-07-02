@@ -26,15 +26,9 @@
 			<artifactId>ballcat-admin-websocket</artifactId>
 		</dependency>
 
-		<!-- 基于 spring authorization server 的 OAuth2 授权服务器 -->
 		<dependency>
 			<groupId>org.ballcat</groupId>
-			<artifactId>ballcat-spring-security-oauth2-authorization-server</artifactId>
-		</dependency>
-		<!-- 基于 spring security 的 OAuth2 资源服务器 -->
-		<dependency>
-			<groupId>org.ballcat</groupId>
-			<artifactId>ballcat-spring-security-oauth2-resource-server</artifactId>
+			<artifactId>ballcat-spring-security</artifactId>
 		</dependency>
 
 		<!--mysql驱动-->
